@@ -878,14 +878,18 @@ const cf = document.getElementById('contact-form');
 if(cf){
   cf.addEventListener('submit', async function(e){
     e.preventDefault();
+    e.stopPropagation();
     const btn = cf.querySelector('button[type=submit]');
     btn.textContent = 'Sending...';
     btn.disabled = true;
+    const fd = new FormData(cf);
+    const data = {};
+    fd.forEach((v,k)=>{ if(k !== '_next') data[k]=v; });
     try {
-      const res = await fetch(cf.action, {
+      const res = await fetch('https://formspree.io/f/xyklnjle', {
         method: 'POST',
-        body: new FormData(cf),
-        headers: {Accept: 'application/json'}
+        body: JSON.stringify(data),
+        headers: {'Content-Type':'application/json','Accept':'application/json'}
       });
       if(res.ok){
         cf.style.display = 'none';
