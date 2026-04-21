@@ -768,7 +768,7 @@ footer{background:var(--dk);padding:20px 56px;border-top:1px solid rgba(250,247,
           <select name="type"><option value="" disabled selected>Select one</option><option>Individual Investor</option><option>Financial Advisor</option><option>Family Office</option><option>Other</option></select>
         </div>
         <div class="fld"><label>Message Details</label><textarea name="message" placeholder="Please share a brief overview of your objectives."></textarea></div>
-        <button type="submit" class="btn btn-ink" style="margin-top:8px">Send Message</button>
+        <button type="button" class="btn btn-ink" style="margin-top:8px" onclick="submitContactForm()">Send Message</button>
       </form>
     </div>
   </div>
@@ -874,35 +874,32 @@ function initReveal(){
 initReveal();
 
 /* CONTACT FORM */
-const cf = document.getElementById('contact-form');
-if(cf){
-  cf.addEventListener('submit', async function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    const btn = cf.querySelector('button[type=submit]');
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-    const fd = new FormData(cf);
-    const data = {};
-    fd.forEach((v,k)=>{ if(k !== '_next') data[k]=v; });
-    try {
-      const res = await fetch('https://formspree.io/f/xyklnjle', {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {'Content-Type':'application/json','Accept':'application/json'}
-      });
-      if(res.ok){
-        cf.style.display = 'none';
-        document.getElementById('form-success').style.display = 'block';
-      } else {
-        btn.textContent = 'Error — try again';
-        btn.disabled = false;
-      }
-    } catch(err){
-      btn.textContent = 'Error — try again';
-      btn.disabled = false;
+async function submitContactForm(){
+  const cf = document.getElementById('contact-form');
+  if(!cf.checkValidity()){cf.reportValidity();return;}
+  const btn = cf.querySelector('button[type=button]');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  const fd = new FormData(cf);
+  const data = {};
+  fd.forEach((v,k)=>{if(k!=='_next')data[k]=v;});
+  try{
+    const res = await fetch('https://formspree.io/f/xyklnjle',{
+      method:'POST',
+      body:JSON.stringify(data),
+      headers:{'Content-Type':'application/json','Accept':'application/json'}
+    });
+    if(res.ok){
+      cf.style.display='none';
+      document.getElementById('form-success').style.display='block';
+    } else {
+      btn.textContent='Error — try again';
+      btn.disabled=false;
     }
-  });
+  } catch(err){
+    btn.textContent='Error — try again';
+    btn.disabled=false;
+  }
 }
 </script>
 </body>
