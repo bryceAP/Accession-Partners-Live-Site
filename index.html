@@ -154,6 +154,11 @@ nav.scrolled{background:rgba(19,18,16,.94);backdrop-filter:blur(14px);-webkit-ba
 .wwa-attr-name{font-family:var(--sans);font-size:12px;font-weight:400;letter-spacing:.08em;color:var(--ink)}
 .wwa-attr-role{font-family:var(--sans);font-size:11px;font-weight:300;color:var(--mid);letter-spacing:.04em}
 
+.wwa-stats{display:flex;flex-direction:column;border-top:1px solid var(--rule);align-self:center}
+.wwa-stat{padding:28px 0;border-bottom:1px solid var(--rule)}
+.wwa-stat-label{font-family:var(--serif);font-size:38px;font-weight:300;color:var(--ink);display:block;margin-bottom:6px;letter-spacing:-.01em}
+.wwa-stat-desc{font-size:14px;font-weight:300;color:var(--mid);line-height:1.6}
+
 /* WHO WE ARE — light */
 #who{background:var(--cr);padding:80px 0}
 .who-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
@@ -428,15 +433,18 @@ footer{background:var(--dk);padding:20px 56px;border-top:1px solid rgba(250,247,
             <li>Seamlessly integrated with your existing professional team.</li>
           </ul>
         </div>
-        <div class="wwa-right">
-          <div class="wwa-photo">
-            <img src="https://images.squarespace-cdn.com/content/v1/63165d3fc3127239ee743672/3571d702-1f54-49bb-8283-2a50c3d690fc/IMG_8917.jpg" alt="Bryce Wilson">
+        <div class="wwa-stats">
+          <div class="wwa-stat">
+            <span class="wwa-stat-label">Fee-Only</span>
+            <p class="wwa-stat-desc">Zero conflicts of interest</p>
           </div>
-          <div class="wwa-quote-block">
-            <span class="wwa-quote-mark">"</span>
-            <p class="wwa-quote">Institutional capabilities. Boutique scale. Complete independence. The result is a client experience that legacy firms cannot replicate.</p>
-            <p class="wwa-attr-name">BRYCE WILSON</p>
-            <p class="wwa-attr-role">Founder &amp; Managing Partner</p>
+          <div class="wwa-stat">
+            <span class="wwa-stat-label">Fiduciary</span>
+            <p class="wwa-stat-desc">100% investor alignment, always</p>
+          </div>
+          <div class="wwa-stat">
+            <span class="wwa-stat-label">Independent</span>
+            <p class="wwa-stat-desc">No proprietary products. No hidden agendas.</p>
           </div>
         </div>
       </div>
