@@ -175,10 +175,14 @@ nav.scrolled{background:rgba(19,18,16,.94);border-bottom:1px solid rgba(250,247,
 .differ-list li{padding:10px 0;border-bottom:1px solid var(--rule);font-size:13.5px;font-weight:300;color:var(--mid);line-height:1.6;display:flex;gap:14px;align-items:baseline}
 .differ-list li::before{content:'—';color:var(--lt);flex-shrink:0;font-size:12px}
 
-/* QUOTE BAND — dark */
-#quote-band{background:var(--dk);padding:100px 56px;text-align:center}
-.qt{font-family:var(--serif);font-size:clamp(18px,2.625vw,33px);font-weight:300;font-style:italic;color:rgba(250,247,242,.88);line-height:1.4;max-width:1100px;margin:0 auto 18px}
-.qt-attr{font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2)}
+/* OUR SCALE — cream */
+#our-scale{background:var(--cr);padding:100px 0}
+#our-scale>.wrap>.lbl{color:var(--gold);display:block;margin-bottom:56px}
+.scale-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:60px}
+.scale-item{border-top:1px solid rgba(19,18,16,.12);padding-top:32px}
+.scale-val{font-family:var(--sans);font-size:clamp(40px,4.5vw,64px);font-weight:300;color:var(--ink);letter-spacing:-.02em;display:block;margin-bottom:10px;line-height:1}
+.scale-cat{font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:16px}
+.scale-desc{font-family:var(--sans);font-size:15px;font-weight:300;line-height:1.72;color:var(--mid)}
 
 /* IMPACT — cream */
 #impact{background:var(--cr);padding:108px 0}
@@ -338,7 +342,8 @@ footer{background:var(--dk);padding:20px 56px;border-top:1px solid rgba(250,247,
   .wwa-grid{grid-template-columns:1fr;gap:56px}
   .wwa-right{flex-direction:row;text-align:left;gap:32px;align-items:flex-start}
   .wwa-quote-block{text-align:left}
-  #quote-band{padding:80px 28px}
+  #our-scale{padding:80px 0}
+  .scale-grid{grid-template-columns:1fr;gap:40px}
   .impact-grid{grid-template-columns:1fr;gap:60px}
   .impact-img{aspect-ratio:16/9}
   .teaser-head{flex-direction:column;gap:20px;align-items:flex-start}
@@ -474,9 +479,28 @@ footer{background:var(--dk);padding:20px 56px;border-top:1px solid rgba(250,247,
     </div>
   </section>
 
-  <section id="quote-band">
-    <p class="qt r">"<span style="font-style:normal">The classic 60/40 portfolio may no longer fully represent true diversification. The future standard portfolio may look more like 50/30/20 — stocks, bonds, and private assets like real estate, infrastructure, and private credit."</span></p>
-    <span class="qt-attr r d1" style="color:var(--gold2)">— Larry Fink, Chairman &amp; CEO, BlackRock</span>
+  <!-- OUR SCALE -->
+  <section id="our-scale">
+    <div class="wrap">
+      <span class="lbl r">Our Scale</span>
+      <div class="scale-grid r d1">
+        <div class="scale-item">
+          <span class="scale-val">40+</span>
+          <span class="scale-cat">Fund Relationships</span>
+          <p class="scale-desc">Direct access to institutional-grade managers across private equity, private credit, real estate, infrastructure, and impact — the same allocations historically reserved for endowments and sovereign wealth funds.</p>
+        </div>
+        <div class="scale-item">
+          <span class="scale-val">Best-in-Class</span>
+          <span class="scale-cat">Platform Partners</span>
+          <p class="scale-desc">Powered by leading alternative investment platforms including iCapital and CAIS, giving clients institutional-grade technology for fund access, capital calls, distributions, and consolidated portfolio reporting.</p>
+        </div>
+        <div class="scale-item">
+          <span class="scale-val">25+</span>
+          <span class="scale-cat">Years Combined Experience</span>
+          <p class="scale-desc">Our team's background spans institutional asset management, endowment investing, and family office advisory — the expertise to allocate with discipline, not to sell products.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
 
