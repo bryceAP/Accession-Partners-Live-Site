@@ -321,7 +321,7 @@ footer{background:var(--dk);padding:20px 56px;border-top:1px solid rgba(250,247,
   #hero{justify-content:flex-start;padding-top:calc(var(--nav) + 48px)}
   .hero-bg img{object-position:65% 100%;transform:translateY(48%) scale(1.5);transform-origin:center bottom}
   .hero-veil{background:linear-gradient(to bottom,rgba(19,18,16,.72) 0%,rgba(19,18,16,.48) 38%,rgba(19,18,16,.12) 62%,rgba(19,18,16,.18) 100%)}
-  .hero-body .btn{padding:9px 22px;font-size:10px;letter-spacing:.2em}
+  .hero-body .btn{display:none}
   #home-cta .serif-h2{font-size:clamp(22px,6vw,36px)}
   #home-cta .btn{padding:10px 20px;font-size:10px}
   nav{padding:0 28px}
@@ -471,33 +471,9 @@ footer{background:var(--dk);padding:20px 56px;border-top:1px solid rgba(250,247,
     </div>
   </section>
 
-  <!-- HOW IT WORKS — 3-step process -->
-  <section id="how-it-works">
-    <div class="wrap">
-      <span class="lbl r">How We Work</span>
-      <h2 class="sans-h2 r d1">A disciplined process.<br>Start to finish.</h2>
-      <div class="process-steps r d2">
-        <div class="process-step">
-          <span class="process-num">01</span>
-          <p class="process-name">Source and Screen</p>
-          <p class="process-desc">We review dozens of managers and opportunities each year, applying a disciplined institutional process.</p>
-        </div>
-        <div class="process-step">
-          <span class="process-num">02</span>
-          <p class="process-name">Curate</p>
-          <p class="process-desc">Every position is sized against your total portfolio, liquidity, tax exposure, and existing holdings considered first.</p>
-        </div>
-        <div class="process-step">
-          <span class="process-num">03</span>
-          <p class="process-name">Implement and Monitor</p>
-          <p class="process-desc">We manage capital calls, distributions, liquidity windows, and rebalancing on an ongoing basis.</p>
-        </div>
-      </div>
-      <div style="text-align:center;margin-top:72px" class="r d3">
-        <button class="btn btn-ink" onclick="go('solutions')" style="padding:16px 48px;font-size:12px;letter-spacing:.18em">Explore Our Solutions</button>
-      </div>
-    </div>
-  </section>
+  <div style="text-align:center;padding:64px 0 80px" class="r d1" id="explore-sol-btn">
+    <button class="btn btn-ink" onclick="go('solutions')" style="padding:16px 48px;font-size:12px;letter-spacing:.18em">Explore Our Solutions</button>
+  </div>
 
   <section id="quote-band">
     <p class="qt r">"<span style="font-style:normal">Institutional capabilities. Complete independence.</span><br>The result is a client experience that legacy firms cannot replicate."</p>
@@ -551,6 +527,31 @@ footer{background:var(--dk);padding:20px 56px;border-top:1px solid rgba(250,247,
       <p class="body r d2" style="color:var(--mid)">We take a refined, top-down approach tailored to your individual risk preferences, liquidity requirements, and target returns, delivering unparalleled access across the investable universe.</p>
     </div>
   </div>
+
+  <!-- HOW IT WORKS — 3-step process -->
+  <section id="how-it-works">
+    <div class="wrap">
+      <span class="lbl r">How We Work</span>
+      <h2 class="sans-h2 r d1">A disciplined process.<br>Start to finish.</h2>
+      <div class="process-steps r d2">
+        <div class="process-step">
+          <span class="process-num">01</span>
+          <p class="process-name">Source and Screen</p>
+          <p class="process-desc">We review dozens of managers and opportunities each year, applying a disciplined institutional process.</p>
+        </div>
+        <div class="process-step">
+          <span class="process-num">02</span>
+          <p class="process-name">Curate</p>
+          <p class="process-desc">Every position is sized against your total portfolio, liquidity, tax exposure, and existing holdings considered first.</p>
+        </div>
+        <div class="process-step">
+          <span class="process-num">03</span>
+          <p class="process-name">Implement and Monitor</p>
+          <p class="process-desc">We manage capital calls, distributions, liquidity windows, and rebalancing on an ongoing basis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <div class="sol-grid-wrap">
     <div class="sol-grid wrap" style="max-width:var(--max)">
