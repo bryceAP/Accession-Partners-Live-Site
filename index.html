@@ -113,11 +113,6 @@ nav.scrolled{background:rgba(19,18,16,.94);border-bottom:1px solid rgba(250,247,
 .hero-body .serif-h1{color:#ffffff;max-width:800px;margin-bottom:56px;font-weight:300}
 .hero-body .serif-h1 em{font-style:italic;color:inherit}
 .hero-sub{font-size:16px;font-weight:300;line-height:1.75;color:rgba(255,255,255,.7);max-width:480px;margin-bottom:52px}
-.hero-scroll{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:0;opacity:.45;transition:opacity .6s;cursor:pointer}
-.hero-scroll.hidden{opacity:0;pointer-events:none}
-.hero-scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,rgba(250,247,242,0),rgba(250,247,242,.6));animation:scrollDrop 2s ease-in-out infinite}
-.hero-scroll-tip{width:7px;height:7px;border-right:1px solid rgba(250,247,242,.6);border-bottom:1px solid rgba(250,247,242,.6);transform:rotate(45deg);margin-top:-4px}
-@keyframes scrollDrop{0%,100%{transform:translateY(-4px);opacity:.45}50%{transform:translateY(4px);opacity:.8}}
 
 
 
@@ -440,10 +435,6 @@ footer{background:var(--dk);padding:20px 56px;border-top:1px solid rgba(250,247,
       <span class="hero-eyebrow r">Holistic Wealth Management</span>
       <h1 class="serif-h1 r d1">Private markets,<br><em style="color:var(--gold)">thoughtfully</em><br>integrated.</h1>
       <button class="btn r d3" onclick="go('contact')">Begin the Conversation</button>
-    </div>
-    <div class="hero-scroll" id="heroScroll" onclick="document.getElementById('who-we-are').scrollIntoView({behavior:'smooth'})">
-      <div class="hero-scroll-line"></div>
-      <div class="hero-scroll-tip"></div>
     </div>
   </section>
 
@@ -965,15 +956,6 @@ async function submitContactForm(){
     if(s < heroEl.offsetHeight){
       heroImg.style.transform = `translateY(calc(15% + ${s * 0.18}px)) scale(1.2)`;
     }
-  }, {passive:true});
-})();
-
-// Scroll indicator hide on scroll
-(function(){
-  const ind = document.getElementById('heroScroll');
-  if(!ind) return;
-  window.addEventListener('scroll', function(){
-    ind.classList.toggle('hidden', window.scrollY > 80);
   }, {passive:true});
 })();
 
