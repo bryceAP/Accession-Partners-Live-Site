@@ -113,6 +113,11 @@ nav.scrolled{background:rgba(19,18,16,.94);border-bottom:1px solid rgba(250,247,
 .hero-body .serif-h1{color:#ffffff;max-width:800px;margin-bottom:56px;font-weight:300}
 .hero-body .serif-h1 em{font-style:italic;color:inherit}
 .hero-sub{font-size:16px;font-weight:300;line-height:1.75;color:rgba(255,255,255,.7);max-width:480px;margin-bottom:52px}
+.hero-scroll{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:0;opacity:.45;transition:opacity .6s;cursor:pointer}
+.hero-scroll.hidden{opacity:0;pointer-events:none}
+.hero-scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,rgba(250,247,242,0),rgba(250,247,242,.6));animation:scrollDrop 2s ease-in-out infinite}
+.hero-scroll-tip{width:7px;height:7px;border-right:1px solid rgba(250,247,242,.6);border-bottom:1px solid rgba(250,247,242,.6);transform:rotate(45deg);margin-top:-4px}
+@keyframes scrollDrop{0%,100%{transform:translateY(-4px);opacity:.45}50%{transform:translateY(4px);opacity:.8}}
 
 
 
@@ -121,7 +126,10 @@ nav.scrolled{background:rgba(19,18,16,.94);border-bottom:1px solid rgba(250,247,
 #who-serve{background:var(--dk);padding:100px 0}
 #who-serve .lbl{color:var(--gold2);margin-bottom:40px}
 .serve-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(250,247,242,.08);border:1px solid rgba(250,247,242,.08)}
-.serve-card{background:var(--dk2);padding:48px 40px;display:flex;flex-direction:column}
+.serve-card{background:var(--dk2);padding:48px 40px;display:flex;flex-direction:column;position:relative;transition:transform .35s var(--ease),box-shadow .35s var(--ease);overflow:hidden}
+.serve-card::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--gold2);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease)}
+.serve-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,.35)}
+.serve-card:hover::after{transform:scaleX(1)}
 .serve-cat{font-family:var(--sans);font-size:13px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2);margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid rgba(250,247,242,.1)}
 .serve-desc{font-size:15px;font-weight:300;line-height:1.85;color:rgba(250,247,242,.55)}
 .serve-desc strong{font-weight:500;color:rgba(250,247,242,.82)}
@@ -330,7 +338,7 @@ footer{background:var(--dk);padding:20px 56px;border-top:1px solid rgba(250,247,
   #hero{justify-content:flex-start;padding-top:calc(var(--nav) + 48px)}
   .hero-bg img{object-position:65% 100%;transform:translateY(52%) scale(1.65);transform-origin:center bottom}
   .hero-veil{background:linear-gradient(to bottom,rgba(19,18,16,0) 0%,rgba(19,18,16,.08) 50%,rgba(19,18,16,.18) 100%)}
-  .hero-body .btn{display:none}
+  .hero-body .btn{display:inline-block}
   #home-cta .serif-h2{font-size:clamp(22px,6vw,36px)}
   #home-cta .btn{padding:10px 20px;font-size:10px}
   nav{padding:0 28px}
@@ -433,6 +441,10 @@ footer{background:var(--dk);padding:20px 56px;border-top:1px solid rgba(250,247,
       <h1 class="serif-h1 r d1">Private markets,<br><em style="color:var(--gold)">thoughtfully</em><br>integrated.</h1>
       <button class="btn r d3" onclick="go('contact')">Begin the Conversation</button>
     </div>
+    <div class="hero-scroll" id="heroScroll" onclick="document.getElementById('who-we-are').scrollIntoView({behavior:'smooth'})">
+      <div class="hero-scroll-line"></div>
+      <div class="hero-scroll-tip"></div>
+    </div>
   </section>
 
 
@@ -492,23 +504,23 @@ footer{background:var(--dk);padding:20px 56px;border-top:1px solid rgba(250,247,
     <div class="scale-veil"></div>
     <div class="wrap">
       <span class="lbl r">Our Scale</span>
-      <div class="scale-main r d1">
-        <div class="scale-quad">
+      <div class="scale-main">
+        <div class="scale-quad r">
           <p class="scale-headline">Boutique service.<br>Institutional reach.</p>
           <p class="scale-sub-copy">A curated network of the world's leading alternative investment platforms, deepened by direct manager relationships built over decades. Backed by the execution infrastructure to access, subscribe, and manage across every channel with institutional precision.</p>
         </div>
-        <div class="scale-quad">
-          <span class="scale-val">30+</span>
+        <div class="scale-quad r d1">
+          <span class="scale-val" data-count="30">30+</span>
           <span class="scale-cat">Years Combined Experience</span>
           <p class="scale-desc">Our team brings over three decades of experience across institutional asset management, family office advisory, and philanthropic planning, giving clients access to the kind of strategic thinking typically reserved for the largest and most sophisticated investors.</p>
         </div>
-        <div class="scale-quad">
-          <span class="scale-val">45+</span>
+        <div class="scale-quad r d2">
+          <span class="scale-val" data-count="45">45+</span>
           <span class="scale-cat">Approved Funds</span>
           <p class="scale-desc">Spanning private equity, private credit, real assets, infrastructure, and venture capital — each fund is independently researched, evaluated, and selected. Our approved funds evolve as managers mature, market cycles shift, and more compelling opportunities emerge.</p>
         </div>
-        <div class="scale-quad">
-          <span class="scale-val">200+</span>
+        <div class="scale-quad r d3">
+          <span class="scale-val" data-count="200">200+</span>
           <span class="scale-cat">Dedicated Diligence Professionals</span>
           <p class="scale-desc">Built as a boutique. Backed by institutions. The partnerships behind this practice extend its capabilities far beyond what any single firm could build, without compromising the focus and discretion that defines it.</p>
         </div>
@@ -920,6 +932,50 @@ async function submitContactForm(){
     btn.disabled=false;
   }
 }
+
+// Count-up numbers
+(function(){
+  function countUp(el){
+    const target = +el.dataset.count;
+    const duration = 1800;
+    const start = performance.now();
+    function step(now){
+      const p = Math.min((now - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(ease * target) + '+';
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ countUp(e.target); obs.unobserve(e.target); } });
+  }, {threshold: 0.4});
+  document.querySelectorAll('.scale-val[data-count]').forEach(el => obs.observe(el));
+})();
+
+// Hero parallax
+(function(){
+  const heroImg = document.querySelector('#hero .hero-bg img');
+  const heroEl = document.getElementById('hero');
+  if(!heroImg || !heroEl) return;
+  const isMobile = () => window.innerWidth <= 980;
+  window.addEventListener('scroll', function(){
+    if(isMobile()) return;
+    const s = window.scrollY;
+    if(s < heroEl.offsetHeight){
+      heroImg.style.transform = `translateY(calc(15% + ${s * 0.18}px)) scale(1.2)`;
+    }
+  }, {passive:true});
+})();
+
+// Scroll indicator hide on scroll
+(function(){
+  const ind = document.getElementById('heroScroll');
+  if(!ind) return;
+  window.addEventListener('scroll', function(){
+    ind.classList.toggle('hidden', window.scrollY > 80);
+  }, {passive:true});
+})();
 
 // Smooth video loop crossfade
 (function(){
