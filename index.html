@@ -175,18 +175,13 @@ nav.scrolled{background:rgba(19,18,16,.94);border-bottom:1px solid rgba(250,247,
 .differ-list li{padding:10px 0;border-bottom:1px solid var(--rule);font-size:13.5px;font-weight:300;color:var(--mid);line-height:1.6;display:flex;gap:14px;align-items:baseline}
 .differ-list li::before{content:'—';color:var(--lt);flex-shrink:0;font-size:12px}
 
-/* PHOTO INTERRUPT — full-bleed editorial break */
-/* REVERT: delete this block and #photo-interrupt HTML to remove */
-#photo-interrupt{position:relative;height:65vh;min-height:360px;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.interrupt-bg{position:absolute;inset:0}
-.interrupt-bg img{width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:brightness(.38) contrast(1.08)}
-.interrupt-veil{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(19,18,16,.45) 0%,rgba(19,18,16,.08) 50%,rgba(19,18,16,.5) 100%)}
-.interrupt-body{position:relative;z-index:2;text-align:center;padding:0 56px}
-.interrupt-line{font-family:var(--serif);font-size:clamp(22px,3.5vw,48px);font-weight:300;font-style:italic;color:rgba(255,255,255,.9);line-height:1.45;max-width:860px;margin:0}
-
-/* OUR SCALE — dark asymmetric */
-/* REVERT: change background back to var(--cr), swap .scale-main for .scale-grid, restore light text colors */
-#our-scale{background:var(--dk);padding:100px 0 0}
+/* OUR SCALE — image background, asymmetric */
+/* REVERT: remove .scale-bg/.scale-veil divs from HTML, change to background:var(--cr), restore light text colors */
+#our-scale{position:relative;overflow:hidden;padding:100px 0}
+.scale-bg{position:absolute;inset:0}
+.scale-bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:brightness(.32) contrast(1.1);display:block}
+.scale-veil{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(19,18,16,.55) 0%,rgba(19,18,16,.3) 50%,rgba(19,18,16,.6) 100%)}
+#our-scale .wrap{position:relative;z-index:2}
 #our-scale>.wrap>.lbl{color:var(--gold2);display:block;margin-bottom:48px}
 .scale-main{display:grid;grid-template-columns:1.15fr 1fr;gap:80px;align-items:start;padding-bottom:80px}
 .scale-main-left .scale-headline{font-family:var(--sans);font-size:clamp(28px,3.2vw,46px);font-weight:300;color:rgba(250,247,242,.88);line-height:1.2;margin:0 0 28px}
@@ -357,9 +352,7 @@ footer{background:var(--dk);padding:20px 56px;border-top:1px solid rgba(250,247,
   .wwa-grid{grid-template-columns:1fr;gap:56px}
   .wwa-right{flex-direction:row;text-align:left;gap:32px;align-items:flex-start}
   .wwa-quote-block{text-align:left}
-  #photo-interrupt{height:50vh;min-height:280px}
-  .interrupt-body{padding:0 28px}
-  #our-scale{padding:80px 0 0}
+  #our-scale{padding:80px 0}
   .scale-main{grid-template-columns:1fr;gap:48px;padding-bottom:56px}
   .impact-grid{grid-template-columns:1fr;gap:60px}
   .impact-img{aspect-ratio:16/9}
@@ -496,20 +489,10 @@ footer{background:var(--dk);padding:20px 56px;border-top:1px solid rgba(250,247,
     </div>
   </section>
 
-  <!-- PHOTO INTERRUPT — remove section to revert -->
-  <section id="photo-interrupt">
-    <div class="interrupt-bg">
-      <img src="pexels-lux-werk-2148504350-30473973.jpg" alt="">
-    </div>
-    <div class="interrupt-veil"></div>
-    <div class="interrupt-body">
-      <p class="interrupt-line r">Private markets have quietly driven institutional returns for decades.<br>We are changing who gets access.</p>
-    </div>
-  </section>
-
-  <!-- OUR SCALE — dark asymmetric version -->
-  <!-- REVERT: see CSS comment above for how to restore cream 3-column layout -->
+  <!-- OUR SCALE — image bg, asymmetric layout -->
   <section id="our-scale">
+    <div class="scale-bg"><img src="pexels-lux-werk-2148504350-30473973.jpg" alt=""></div>
+    <div class="scale-veil"></div>
     <div class="wrap">
       <span class="lbl r">Our Scale</span>
       <div class="scale-main r d1">
