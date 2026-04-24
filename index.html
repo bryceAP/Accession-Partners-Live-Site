@@ -183,18 +183,16 @@ nav.scrolled{background:rgba(19,18,16,.94);border-bottom:1px solid rgba(250,247,
 .scale-veil{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(19,18,16,.55) 0%,rgba(19,18,16,.3) 50%,rgba(19,18,16,.6) 100%)}
 #our-scale .wrap{position:relative;z-index:2}
 #our-scale>.wrap>.lbl{color:var(--gold2);display:block;margin-bottom:48px}
-.scale-main{display:grid;grid-template-columns:1.15fr 1fr;gap:80px;align-items:start;padding-bottom:80px}
-.scale-main-left .scale-headline{font-family:var(--sans);font-size:clamp(28px,3.2vw,46px);font-weight:300;color:rgba(250,247,242,.88);line-height:1.2;margin:0 0 28px}
-.scale-main-left .scale-sub-copy{font-family:var(--sans);font-size:15px;font-weight:300;line-height:1.75;color:rgba(250,247,242,.42);max-width:500px;margin-bottom:28px}
-.scale-partners-dk{font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--gold2);line-height:2.2}
-.scale-main-right{display:grid;grid-template-columns:1fr 1fr}
-.scale-stat{border-top:1px solid rgba(250,247,242,.09);padding:32px 0}
-.scale-stat:first-child{grid-column:1/-1;border-bottom:1px solid rgba(250,247,242,.09);padding-bottom:32px}
-.scale-stat:nth-child(2){padding-right:36px;border-right:1px solid rgba(250,247,242,.09)}
-.scale-stat:nth-child(3){padding-left:36px}
-.scale-stat .scale-val{font-family:var(--sans);font-size:clamp(44px,5vw,72px);font-weight:300;color:rgba(250,247,242,.88);letter-spacing:-.02em;display:block;margin-bottom:8px;line-height:1}
-.scale-stat .scale-cat{font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--gold2);display:block;margin-bottom:14px}
-.scale-stat .scale-desc{font-family:var(--sans);font-size:14px;font-weight:300;line-height:1.72;color:rgba(250,247,242,.38)}
+.scale-main{display:grid;grid-template-columns:1fr 1fr;padding-bottom:80px}
+.scale-quad{padding:40px 48px 40px 0}
+.scale-quad:nth-child(even){padding:40px 0 40px 48px;border-left:1px solid rgba(250,247,242,.09)}
+.scale-quad:nth-child(1),.scale-quad:nth-child(2){border-bottom:1px solid rgba(250,247,242,.09)}
+.scale-quad:nth-child(3),.scale-quad:nth-child(4){padding-top:40px}
+.scale-headline{font-family:var(--sans);font-size:clamp(26px,3vw,42px);font-weight:300;color:rgba(250,247,242,.88);line-height:1.2;margin:0 0 24px}
+.scale-sub-copy{font-family:var(--sans);font-size:15px;font-weight:300;line-height:1.75;color:rgba(250,247,242,.42)}
+.scale-val{font-family:var(--sans);font-size:clamp(44px,5vw,72px);font-weight:300;color:rgba(250,247,242,.88);letter-spacing:-.02em;display:block;margin-bottom:8px;line-height:1}
+.scale-cat{font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--gold2);display:block;margin-bottom:14px}
+.scale-desc{font-family:var(--sans);font-size:14px;font-weight:300;line-height:1.72;color:rgba(250,247,242,.38)}
 
 /* IMPACT — cream */
 #impact{background:var(--cr);padding:108px 0}
@@ -355,7 +353,9 @@ footer{background:var(--dk);padding:20px 56px;border-top:1px solid rgba(250,247,
   .wwa-right{flex-direction:row;text-align:left;gap:32px;align-items:flex-start}
   .wwa-quote-block{text-align:left}
   #our-scale{padding:80px 0}
-  .scale-main{grid-template-columns:1fr;gap:48px;padding-bottom:56px}
+  .scale-main{grid-template-columns:1fr;padding-bottom:56px}
+  .scale-quad,.scale-quad:nth-child(even){padding:32px 0;border-left:none}
+  .scale-quad:nth-child(1),.scale-quad:nth-child(2),.scale-quad:nth-child(3){border-bottom:1px solid rgba(250,247,242,.09)}
   .impact-grid{grid-template-columns:1fr;gap:60px}
   .impact-img{aspect-ratio:16/9}
   .teaser-head{flex-direction:column;gap:20px;align-items:flex-start}
@@ -498,26 +498,24 @@ footer{background:var(--dk);padding:20px 56px;border-top:1px solid rgba(250,247,
     <div class="wrap">
       <span class="lbl r">Our Scale</span>
       <div class="scale-main r d1">
-        <div class="scale-main-left">
+        <div class="scale-quad">
           <p class="scale-headline">Boutique service.<br>Institutional reach.</p>
           <p class="scale-sub-copy">A curated network of the world's leading alternative investment platforms, deepened by direct manager relationships built over decades. Backed by the execution infrastructure to access, subscribe, and manage across every channel with institutional precision.</p>
         </div>
-        <div class="scale-main-right">
-          <div class="scale-stat">
-            <span class="scale-val">30+</span>
-            <span class="scale-cat">Years Combined Experience</span>
-            <p class="scale-desc">Our team brings over three decades of experience across institutional asset management, family office advisory, and philanthropic planning, giving clients access to the kind of strategic thinking typically reserved for the largest and most sophisticated investors.</p>
-          </div>
-          <div class="scale-stat">
-            <span class="scale-val">45+</span>
-            <span class="scale-cat">Funds on Platform</span>
-            <p class="scale-desc">Evergreen and drawdown structures across private equity, private credit, real assets, and infrastructure — giving clients the right vehicle for their liquidity profile, not just the funds that are easiest to access.</p>
-          </div>
-          <div class="scale-stat">
-            <span class="scale-val">200+</span>
-            <span class="scale-cat">Dedicated Diligence Professionals</span>
-            <p class="scale-desc">Built as a boutique. Backed by institutions. The partnerships behind this practice extend its capabilities far beyond what any single firm could build, without compromising the focus and discretion that defines it.</p>
-          </div>
+        <div class="scale-quad">
+          <span class="scale-val">30+</span>
+          <span class="scale-cat">Years Combined Experience</span>
+          <p class="scale-desc">Our team brings over three decades of experience across institutional asset management, family office advisory, and philanthropic planning, giving clients access to the kind of strategic thinking typically reserved for the largest and most sophisticated investors.</p>
+        </div>
+        <div class="scale-quad">
+          <span class="scale-val">45+</span>
+          <span class="scale-cat">Funds on Platform</span>
+          <p class="scale-desc">Evergreen and drawdown structures across private equity, private credit, real assets, and infrastructure — giving clients the right vehicle for their liquidity profile, not just the funds that are easiest to access.</p>
+        </div>
+        <div class="scale-quad">
+          <span class="scale-val">200+</span>
+          <span class="scale-cat">Dedicated Diligence Professionals</span>
+          <p class="scale-desc">Built as a boutique. Backed by institutions. The partnerships behind this practice extend its capabilities far beyond what any single firm could build, without compromising the focus and discretion that defines it.</p>
         </div>
       </div>
     </div>
