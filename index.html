@@ -226,16 +226,11 @@ nav.scrolled{background:rgba(19,18,16,.94);border-bottom:1px solid rgba(250,247,
 #home-cta .body{color:rgba(250,247,242,.4);max-width:360px;margin:0 auto 48px}
 
 /* FOOTER */
-footer{background:var(--dk);border-top:1px solid rgba(250,247,242,.07)}
-.f-main{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:48px;padding:56px 56px 48px;max-width:var(--max);margin:0 auto}
-.f-logo{height:38px;width:38px;object-fit:contain;display:block;margin-bottom:18px;opacity:.85}
-.f-tagline{font-family:var(--sans);font-size:12px;font-weight:300;color:rgba(250,247,242,.3);line-height:1.75;letter-spacing:.03em;max-width:220px}
-.f-col-label{font-family:var(--sans);font-size:9px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:rgba(250,247,242,.22);display:block;margin-bottom:18px}
-.f-nav-links,.f-legal-links{display:flex;flex-direction:column;gap:13px}
-.f-nav-links button,.f-legal-links a,.f-legal-links button{font-family:var(--sans);font-size:11px;font-weight:300;letter-spacing:.06em;color:rgba(250,247,242,.42);text-decoration:none;cursor:pointer;background:none;border:none;text-align:left;padding:0;transition:color .2s}
-.f-nav-links button:hover,.f-legal-links a:hover,.f-legal-links button:hover{color:rgba(250,247,242,.78)}
-.f-bar{border-top:1px solid rgba(250,247,242,.06);padding:20px 56px;display:flex;justify-content:space-between;align-items:center}
-.f-copy{font-family:var(--sans);font-size:10px;font-weight:300;color:rgba(250,247,242,.2);letter-spacing:.08em;text-transform:uppercase}
+footer{background:var(--dk);padding:20px 56px;border-top:1px solid rgba(250,247,242,.07);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.f-copy{font-family:var(--sans);font-size:10px;font-weight:300;color:rgba(250,247,242,.32);letter-spacing:.08em;text-transform:uppercase}
+.f-links{display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+.f-links a,.f-links button{font-family:var(--sans);font-size:10px;font-weight:300;letter-spacing:.08em;text-transform:uppercase;color:rgba(250,247,242,.32);text-decoration:none;cursor:pointer;background:none;border:none;transition:color .2s}
+.f-links a:hover,.f-links button:hover{color:rgba(250,247,242,.7)}
 
 /* ══════════════════════════════════
    SOLUTIONS PAGE
@@ -364,8 +359,7 @@ footer{background:var(--dk);border-top:1px solid rgba(250,247,242,.07)}
   .teaser-head{flex-direction:column;gap:20px;align-items:flex-start}
   .teaser-cards{grid-template-columns:1fr}
   #home-cta{padding:80px 28px}
-  .f-main{grid-template-columns:1fr;gap:28px;padding:40px 28px 32px}
-  .f-bar{padding:16px 28px}
+  footer{padding:18px 28px}
   .sol-grid{grid-template-columns:repeat(2,1fr)}
   .sol-grid-wrap{overflow-x:auto}
   /* remove all card borders on mobile */
@@ -536,32 +530,10 @@ footer{background:var(--dk);border-top:1px solid rgba(250,247,242,.07)}
   </section>
 
   <footer>
-    <div class="f-main">
-      <div>
-        <img src="White V2.png" alt="Accession Partners" class="f-logo">
-        <p class="f-tagline">Private markets,<br>thoughtfully integrated.</p>
-      </div>
-      <div>
-        <span class="f-col-label">Navigate</span>
-        <div class="f-nav-links">
-          <button onclick="go('home')">Home</button>
-          <button onclick="go('solutions')">Solutions</button>
-          <button onclick="go('team')">Team</button>
-          <button onclick="go('contact')">Connect</button>
-        </div>
-      </div>
-      <div>
-        <span class="f-col-label">Legal</span>
-        <div class="f-legal-links">
-          <a href="https://files.adviserinfo.sec.gov/IAPD/Content/Common/crd_iapd_Brochure.aspx?BRCHR_VRSN_ID=1038583" target="_blank">Firm Brochure (ADV 2A &amp; 2B)</a>
-          <button onclick="showModal('disc-modal')">Disclosures</button>
-          <button onclick="showModal('privacy-modal')">Privacy Policy</button>
-        </div>
-      </div>
-    </div>
-    <div class="f-bar">
-      <span class="f-copy">Accession Partners LLC &nbsp;&middot;&nbsp; &copy; 2026</span>
-      <span class="f-copy">Investment Adviser Representative</span>
+    <span class="f-copy">Accession Partners LLC &nbsp;&middot;&nbsp; &copy; 2026</span>
+    <div class="f-links">
+      <a href="https://files.adviserinfo.sec.gov/IAPD/Content/Common/crd_iapd_Brochure.aspx?BRCHR_VRSN_ID=1038583" target="_blank">Firm Brochure (ADV 2A &amp; 2B)</a>
+      <button onclick="showModal('disc-modal')">Disclosures</button>
     </div>
   </footer>
 </div>
@@ -712,32 +684,10 @@ footer{background:var(--dk);border-top:1px solid rgba(250,247,242,.07)}
   </section>
 
   <footer>
-    <div class="f-main">
-      <div>
-        <img src="White V2.png" alt="Accession Partners" class="f-logo">
-        <p class="f-tagline">Private markets,<br>thoughtfully integrated.</p>
-      </div>
-      <div>
-        <span class="f-col-label">Navigate</span>
-        <div class="f-nav-links">
-          <button onclick="go('home')">Home</button>
-          <button onclick="go('solutions')">Solutions</button>
-          <button onclick="go('team')">Team</button>
-          <button onclick="go('contact')">Connect</button>
-        </div>
-      </div>
-      <div>
-        <span class="f-col-label">Legal</span>
-        <div class="f-legal-links">
-          <a href="https://files.adviserinfo.sec.gov/IAPD/Content/Common/crd_iapd_Brochure.aspx?BRCHR_VRSN_ID=1038583" target="_blank">Firm Brochure (ADV 2A &amp; 2B)</a>
-          <button onclick="showModal('disc-modal')">Disclosures</button>
-          <button onclick="showModal('privacy-modal')">Privacy Policy</button>
-        </div>
-      </div>
-    </div>
-    <div class="f-bar">
-      <span class="f-copy">Accession Partners LLC &nbsp;&middot;&nbsp; &copy; 2026</span>
-      <span class="f-copy">Investment Adviser Representative</span>
+    <span class="f-copy">Accession Partners LLC &nbsp;&middot;&nbsp; &copy; 2026</span>
+    <div class="f-links">
+      <a href="https://files.adviserinfo.sec.gov/IAPD/Content/Common/crd_iapd_Brochure.aspx?BRCHR_VRSN_ID=1038583" target="_blank">Firm Brochure (ADV 2A &amp; 2B)</a>
+      <button onclick="showModal('disc-modal')">Disclosures</button>
     </div>
   </footer>
 </div>
@@ -807,32 +757,10 @@ footer{background:var(--dk);border-top:1px solid rgba(250,247,242,.07)}
   </div>
 
   <footer>
-    <div class="f-main">
-      <div>
-        <img src="White V2.png" alt="Accession Partners" class="f-logo">
-        <p class="f-tagline">Private markets,<br>thoughtfully integrated.</p>
-      </div>
-      <div>
-        <span class="f-col-label">Navigate</span>
-        <div class="f-nav-links">
-          <button onclick="go('home')">Home</button>
-          <button onclick="go('solutions')">Solutions</button>
-          <button onclick="go('team')">Team</button>
-          <button onclick="go('contact')">Connect</button>
-        </div>
-      </div>
-      <div>
-        <span class="f-col-label">Legal</span>
-        <div class="f-legal-links">
-          <a href="https://files.adviserinfo.sec.gov/IAPD/Content/Common/crd_iapd_Brochure.aspx?BRCHR_VRSN_ID=1038583" target="_blank">Firm Brochure (ADV 2A &amp; 2B)</a>
-          <button onclick="showModal('disc-modal')">Disclosures</button>
-          <button onclick="showModal('privacy-modal')">Privacy Policy</button>
-        </div>
-      </div>
-    </div>
-    <div class="f-bar">
-      <span class="f-copy">Accession Partners LLC &nbsp;&middot;&nbsp; &copy; 2026</span>
-      <span class="f-copy">Investment Adviser Representative</span>
+    <span class="f-copy">Accession Partners LLC &nbsp;&middot;&nbsp; &copy; 2026</span>
+    <div class="f-links">
+      <a href="https://files.adviserinfo.sec.gov/IAPD/Content/Common/crd_iapd_Brochure.aspx?BRCHR_VRSN_ID=1038583" target="_blank">Firm Brochure (ADV 2A &amp; 2B)</a>
+      <button onclick="showModal('disc-modal')">Disclosures</button>
     </div>
   </footer>
 </div>
@@ -859,38 +787,16 @@ footer{background:var(--dk);border-top:1px solid rgba(250,247,242,.07)}
         <div class="fld"><label>I am a</label>
           <select name="type"><option value="" disabled selected>Select one</option><option>Individual Investor</option><option>Financial Advisor</option><option>Family Office</option><option>Other</option></select>
         </div>
-        <div class="fld"><label>Message Details</label><textarea name="message"></textarea></div>
+        <div class="fld"><label>Message Details</label><textarea name="message" placeholder="Please share a brief overview of your objectives."></textarea></div>
         <button type="button" class="btn btn-ink" style="margin-top:8px" onclick="submitContactForm()">Send</button>
       </form>
     </div>
   </div>
   <footer>
-    <div class="f-main">
-      <div>
-        <img src="White V2.png" alt="Accession Partners" class="f-logo">
-        <p class="f-tagline">Private markets,<br>thoughtfully integrated.</p>
-      </div>
-      <div>
-        <span class="f-col-label">Navigate</span>
-        <div class="f-nav-links">
-          <button onclick="go('home')">Home</button>
-          <button onclick="go('solutions')">Solutions</button>
-          <button onclick="go('team')">Team</button>
-          <button onclick="go('contact')">Connect</button>
-        </div>
-      </div>
-      <div>
-        <span class="f-col-label">Legal</span>
-        <div class="f-legal-links">
-          <a href="https://files.adviserinfo.sec.gov/IAPD/Content/Common/crd_iapd_Brochure.aspx?BRCHR_VRSN_ID=1038583" target="_blank">Firm Brochure (ADV 2A &amp; 2B)</a>
-          <button onclick="showModal('disc-modal')">Disclosures</button>
-          <button onclick="showModal('privacy-modal')">Privacy Policy</button>
-        </div>
-      </div>
-    </div>
-    <div class="f-bar">
-      <span class="f-copy">Accession Partners LLC &nbsp;&middot;&nbsp; &copy; 2026</span>
-      <span class="f-copy">Investment Adviser Representative</span>
+    <span class="f-copy">Accession Partners LLC &nbsp;&middot;&nbsp; &copy; 2026</span>
+    <div class="f-links">
+      <a href="https://files.adviserinfo.sec.gov/IAPD/Content/Common/crd_iapd_Brochure.aspx?BRCHR_VRSN_ID=1038583" target="_blank">Firm Brochure (ADV 2A &amp; 2B)</a>
+      <button onclick="showModal('disc-modal')">Disclosures</button>
     </div>
   </footer>
 </div>
