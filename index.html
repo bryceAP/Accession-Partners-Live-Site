@@ -187,9 +187,11 @@ nav.scrolled{background:rgba(19,18,16,.94);border-bottom:1px solid rgba(250,247,
 .scale-main-left .scale-headline{font-family:var(--sans);font-size:clamp(28px,3.2vw,46px);font-weight:300;color:rgba(250,247,242,.88);line-height:1.2;margin:0 0 28px}
 .scale-main-left .scale-sub-copy{font-family:var(--sans);font-size:15px;font-weight:300;line-height:1.75;color:rgba(250,247,242,.42);max-width:500px;margin-bottom:28px}
 .scale-partners-dk{font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--gold2);line-height:2.2}
-.scale-main-right{display:flex;flex-direction:column;gap:0}
+.scale-main-right{display:grid;grid-template-columns:1fr 1fr}
 .scale-stat{border-top:1px solid rgba(250,247,242,.09);padding:32px 0}
-.scale-stat:last-child{border-bottom:1px solid rgba(250,247,242,.09)}
+.scale-stat:first-child{grid-column:1/-1;border-bottom:1px solid rgba(250,247,242,.09);padding-bottom:32px}
+.scale-stat:nth-child(2){padding-right:36px;border-right:1px solid rgba(250,247,242,.09)}
+.scale-stat:nth-child(3){padding-left:36px}
 .scale-stat .scale-val{font-family:var(--sans);font-size:clamp(44px,5vw,72px);font-weight:300;color:rgba(250,247,242,.88);letter-spacing:-.02em;display:block;margin-bottom:8px;line-height:1}
 .scale-stat .scale-cat{font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--gold2);display:block;margin-bottom:14px}
 .scale-stat .scale-desc{font-family:var(--sans);font-size:14px;font-weight:300;line-height:1.72;color:rgba(250,247,242,.38)}
@@ -507,14 +509,14 @@ footer{background:var(--dk);padding:20px 56px;border-top:1px solid rgba(250,247,
             <p class="scale-desc">Our team brings over three decades of experience across institutional asset management, family office advisory, and philanthropic planning, giving clients access to the kind of strategic thinking typically reserved for the largest and most sophisticated investors.</p>
           </div>
           <div class="scale-stat">
-            <span class="scale-val">200+</span>
-            <span class="scale-cat">Dedicated Diligence Professionals</span>
-            <p class="scale-desc">Built as a boutique. Backed by institutions. The partnerships behind this practice extend its capabilities far beyond what any single firm could build, without compromising the focus and discretion that defines it.</p>
-          </div>
-          <div class="scale-stat">
             <span class="scale-val">45+</span>
             <span class="scale-cat">Funds on Platform</span>
             <p class="scale-desc">Evergreen and drawdown structures across private equity, private credit, real assets, and infrastructure — giving clients the right vehicle for their liquidity profile, not just the funds that are easiest to access.</p>
+          </div>
+          <div class="scale-stat">
+            <span class="scale-val">200+</span>
+            <span class="scale-cat">Dedicated Diligence Professionals</span>
+            <p class="scale-desc">Built as a boutique. Backed by institutions. The partnerships behind this practice extend its capabilities far beyond what any single firm could build, without compromising the focus and discretion that defines it.</p>
           </div>
         </div>
       </div>
