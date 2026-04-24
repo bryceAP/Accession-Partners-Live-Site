@@ -175,16 +175,35 @@ nav.scrolled{background:rgba(19,18,16,.94);border-bottom:1px solid rgba(250,247,
 .differ-list li{padding:10px 0;border-bottom:1px solid var(--rule);font-size:13.5px;font-weight:300;color:var(--mid);line-height:1.6;display:flex;gap:14px;align-items:baseline}
 .differ-list li::before{content:'—';color:var(--lt);flex-shrink:0;font-size:12px}
 
-/* OUR SCALE — cream */
-#our-scale{background:var(--cr);padding:100px 0}
-#our-scale>.wrap>.lbl{color:var(--gold);display:block;margin-bottom:12px}
-#our-scale .scale-sub{font-family:var(--sans);font-size:clamp(22px,2.5vw,32px);font-weight:300;color:var(--ink);margin:0 0 64px;line-height:1.2}
-.scale-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:60px}
-.scale-item{border-top:1px solid rgba(19,18,16,.12);padding-top:32px}
-.scale-val{font-family:var(--sans);font-size:clamp(40px,4.5vw,64px);font-weight:300;color:var(--ink);letter-spacing:-.02em;display:block;margin-bottom:10px;line-height:1}
-.scale-cat{font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:16px}
-.scale-desc{font-family:var(--sans);font-size:15px;font-weight:300;line-height:1.72;color:var(--mid)}
-.scale-partners{margin-top:14px;font-family:var(--sans);font-size:12px;font-weight:400;color:var(--ink);letter-spacing:.04em;opacity:.55}
+/* PHOTO INTERRUPT — full-bleed editorial break */
+/* REVERT: delete this block and #photo-interrupt HTML to remove */
+#photo-interrupt{position:relative;height:65vh;min-height:360px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.interrupt-bg{position:absolute;inset:0}
+.interrupt-bg img{width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:brightness(.38) contrast(1.08)}
+.interrupt-veil{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(19,18,16,.45) 0%,rgba(19,18,16,.08) 50%,rgba(19,18,16,.5) 100%)}
+.interrupt-body{position:relative;z-index:2;text-align:center;padding:0 56px}
+.interrupt-line{font-family:var(--serif);font-size:clamp(22px,3.5vw,48px);font-weight:300;font-style:italic;color:rgba(255,255,255,.9);line-height:1.45;max-width:860px;margin:0}
+
+/* OUR SCALE — dark asymmetric */
+/* REVERT: change background back to var(--cr), swap .scale-main for .scale-grid, restore light text colors */
+#our-scale{background:var(--dk);padding:100px 0 0}
+#our-scale>.wrap>.lbl{color:var(--gold2);display:block;margin-bottom:48px}
+.scale-main{display:grid;grid-template-columns:1.15fr 1fr;gap:80px;align-items:start;padding-bottom:80px}
+.scale-main-left .scale-headline{font-family:var(--sans);font-size:clamp(28px,3.2vw,46px);font-weight:300;color:rgba(250,247,242,.88);line-height:1.2;margin:0 0 28px}
+.scale-main-left .scale-sub-copy{font-family:var(--sans);font-size:15px;font-weight:300;line-height:1.75;color:rgba(250,247,242,.42);max-width:500px;margin-bottom:28px}
+.scale-partners-dk{font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--gold2);line-height:2.2}
+.scale-main-right{display:flex;flex-direction:column;gap:0}
+.scale-stat{border-top:1px solid rgba(250,247,242,.09);padding:32px 0}
+.scale-stat:last-child{border-bottom:1px solid rgba(250,247,242,.09)}
+.scale-stat .scale-val{font-family:var(--sans);font-size:clamp(44px,5vw,72px);font-weight:300;color:rgba(250,247,242,.88);letter-spacing:-.02em;display:block;margin-bottom:8px;line-height:1}
+.scale-stat .scale-cat{font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--gold2);display:block;margin-bottom:14px}
+.scale-stat .scale-desc{font-family:var(--sans);font-size:14px;font-weight:300;line-height:1.72;color:rgba(250,247,242,.38)}
+/* Marquee */
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.marquee-wrap{border-top:1px solid rgba(250,247,242,.07);padding:22px 0;overflow:hidden}
+.marquee-inner{display:flex;width:max-content;animation:marquee 32s linear infinite}
+.marquee-item{font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:rgba(250,247,242,.2);white-space:nowrap;padding:0 36px}
+.marquee-dot{color:var(--gold2);opacity:.45;padding:0}
 
 /* IMPACT — cream */
 #impact{background:var(--cr);padding:108px 0}
@@ -344,8 +363,10 @@ footer{background:var(--dk);padding:20px 56px;border-top:1px solid rgba(250,247,
   .wwa-grid{grid-template-columns:1fr;gap:56px}
   .wwa-right{flex-direction:row;text-align:left;gap:32px;align-items:flex-start}
   .wwa-quote-block{text-align:left}
-  #our-scale{padding:80px 0}
-  .scale-grid{grid-template-columns:1fr;gap:40px}
+  #photo-interrupt{height:50vh;min-height:280px}
+  .interrupt-body{padding:0 28px}
+  #our-scale{padding:80px 0 0}
+  .scale-main{grid-template-columns:1fr;gap:48px;padding-bottom:56px}
   .impact-grid{grid-template-columns:1fr;gap:60px}
   .impact-img{aspect-ratio:16/9}
   .teaser-head{flex-direction:column;gap:20px;align-items:flex-start}
@@ -481,28 +502,56 @@ footer{background:var(--dk);padding:20px 56px;border-top:1px solid rgba(250,247,
     </div>
   </section>
 
-  <!-- OUR SCALE -->
+  <!-- PHOTO INTERRUPT — remove section to revert -->
+  <section id="photo-interrupt">
+    <div class="interrupt-bg">
+      <img src="pexels-lux-werk-2148504350-30473973.jpg" alt="">
+    </div>
+    <div class="interrupt-veil"></div>
+    <div class="interrupt-body">
+      <p class="interrupt-line r">Private markets have quietly driven institutional returns for decades.<br>We are changing who gets access.</p>
+    </div>
+  </section>
+
+  <!-- OUR SCALE — dark asymmetric version -->
+  <!-- REVERT: see CSS comment above for how to restore cream 3-column layout -->
   <section id="our-scale">
     <div class="wrap">
       <span class="lbl r">Our Scale</span>
-      <p class="scale-sub r d1">Boutique service. Institutional reach.</p>
-      <div class="scale-grid r d2">
-        <div class="scale-item">
-          <span class="scale-val" style="font-size:clamp(28px,3.2vw,46px)">Institutional</span>
-          <span class="scale-cat">Platform Partners</span>
-          <p class="scale-desc">A curated network of the world's leading alternative investment platforms, deepened by direct manager relationships built over decades. Backed by the execution infrastructure to access, subscribe, and manage across every channel with institutional precision.</p>
-          <p class="scale-partners">iCapital &nbsp;·&nbsp; CAIS &nbsp;·&nbsp; Opto &nbsp;·&nbsp; GLASfunds &nbsp;·&nbsp; Axcelus Financial</p>
+      <div class="scale-main r d1">
+        <div class="scale-main-left">
+          <p class="scale-headline">Boutique service.<br>Institutional reach.</p>
+          <p class="scale-sub-copy">A curated network of the world's leading alternative investment platforms, deepened by direct manager relationships built over decades. Backed by the execution infrastructure to access, subscribe, and manage across every channel with institutional precision.</p>
+          <p class="scale-partners-dk">iCapital &nbsp;·&nbsp; CAIS<br>Opto &nbsp;·&nbsp; GLASfunds &nbsp;·&nbsp; Axcelus Financial</p>
         </div>
-        <div class="scale-item">
-          <span class="scale-val">200+</span>
-          <span class="scale-cat">Dedicated Diligence Professionals</span>
-          <p class="scale-desc">Built as a boutique. Backed by institutions. The partnerships behind this practice extend its capabilities far beyond what any single firm could build, without compromising the focus and discretion that defines it.</p>
+        <div class="scale-main-right">
+          <div class="scale-stat">
+            <span class="scale-val">200+</span>
+            <span class="scale-cat">Dedicated Diligence Professionals</span>
+            <p class="scale-desc">Built as a boutique. Backed by institutions. The partnerships behind this practice extend its capabilities far beyond what any single firm could build, without compromising the focus and discretion that defines it.</p>
+          </div>
+          <div class="scale-stat">
+            <span class="scale-val">30+</span>
+            <span class="scale-cat">Years Combined Experience</span>
+            <p class="scale-desc">Our team brings over three decades of experience across institutional asset management, family office advisory, and philanthropic planning, giving clients access to the kind of strategic thinking typically reserved for the largest and most sophisticated investors.</p>
+          </div>
         </div>
-        <div class="scale-item">
-          <span class="scale-val">30+</span>
-          <span class="scale-cat">Years Combined Experience</span>
-          <p class="scale-desc">Our team brings over three decades of experience across institutional asset management, family office advisory, and philanthropic planning, giving clients access to the kind of strategic thinking typically reserved for the largest and most sophisticated investors.</p>
-        </div>
+      </div>
+    </div>
+    <div class="marquee-wrap">
+      <div class="marquee-inner">
+        <span class="marquee-item">iCapital</span><span class="marquee-dot">·</span>
+        <span class="marquee-item">CAIS</span><span class="marquee-dot">·</span>
+        <span class="marquee-item">Opto</span><span class="marquee-dot">·</span>
+        <span class="marquee-item">GLASfunds</span><span class="marquee-dot">·</span>
+        <span class="marquee-item">Axcelus Financial</span><span class="marquee-dot">·</span>
+        <span class="marquee-item">Direct Manager Network</span><span class="marquee-dot">·</span>
+        <span class="marquee-item">iCapital</span><span class="marquee-dot">·</span>
+        <span class="marquee-item">CAIS</span><span class="marquee-dot">·</span>
+        <span class="marquee-item">Opto</span><span class="marquee-dot">·</span>
+        <span class="marquee-item">GLASfunds</span><span class="marquee-dot">·</span>
+        <span class="marquee-item">Axcelus Financial</span><span class="marquee-dot">·</span>
+        <span class="marquee-item">Direct Manager Network</span><span class="marquee-dot">·</span>
       </div>
     </div>
   </section>
@@ -513,7 +562,8 @@ footer{background:var(--dk);padding:20px 56px;border-top:1px solid rgba(250,247,
   <section id="home-cta">
     <span class="lbl r">Get Started</span>
     <h2 class="serif-h2 r d1">We take on a limited number<br>of new relationships each year.</h2>
-    <button class="btn r d2" style="margin-top:48px" onclick="go('contact')">Schedule an Introductory Conversation</button>
+    <p class="body r d2" style="color:rgba(250,247,242,.42);max-width:440px;margin:24px auto 0;line-height:1.8">Not by accident. We keep our client list intentionally small so the work we do for each one reflects the full depth of what we have built. If the timing is right, we would like to hear from you.</p>
+    <button class="btn r d3" style="margin-top:48px" onclick="go('contact')">Schedule an Introductory Conversation</button>
   </section>
 
   <footer>
